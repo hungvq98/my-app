@@ -1,26 +1,68 @@
 @import "tailwindcss";
+/* Dòng này sẽ thay thế cho cả base, components và utilities cũ */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@custom-variant dark (&:is(.dark *));
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ... Code CSS của bạn ở bên dưới (nếu có) ... */
+
+.container {
+  max-width: 77.5rem;
+  margin: 0 auto;
+  padding: 0 .9375rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@layer base {
+  :root {
+    /* Màu nền và màu chữ chính (Light Mode) */
+    --background: 0 0% 100%;
+    /* Trắng */
+    --foreground: 0 0% 0%;
+    /* Đen */
+
+    /* Các màu nền khối xám đặc trưng của thiết kế */
+    --shop-hero-bg: #F2F0F1;
+    --shop-footer-bg: #F0F0F0;
+    --shop-card-bg: #F0EEED;
+    --shop-search-bg: #F0F0F0;
+    --shop-border: #E5E7EB;
+  }
+
+  .dark {
+    /* Màu nền và màu chữ chính (Dark Mode) */
+    --background: 240 10% 3.9%;
+    /* Đen xám */
+    --foreground: 0 0% 100%;
+    /* Trắng */
+
+    /* Các màu nền khối chuyển sang tông tối */
+    --shop-hero-bg: #18181B;
+    /* Kẽm sẫm */
+    --shop-footer-bg: #09090B;
+    /* Đen tuyền */
+    --shop-card-bg: #27272A;
+    /* Nền card tối */
+    --shop-search-bg: #27272A;
+    --shop-border: #27272A;
+  }
+}
+
+/* Đăng ký màu này cho Tailwind v4 sử dụng */
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-shop-hero: var(--shop-hero-bg);
+  --color-shop-footer: var(--shop-footer-bg);
+  --color-shop-card: var(--shop-card-bg);
+  --color-shop-search: var(--shop-search-bg);
+  --color-shop-border: var(--shop-border);
 }
