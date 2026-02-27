@@ -1,4 +1,5 @@
 import BrowseStyle from "@/components/home/BrowseStyle";
+import HappyCustomers from "@/components/home/HappyCustomes";
 import ProductSections from "@/components/home/ProductSection";
 import HeroBanner from "@/components/layout/HeroBanner"
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <HeroBanner />
       <ProductSections/>
       <BrowseStyle/>
+      <HappyCustomers/>
     </main>
   );
 }
