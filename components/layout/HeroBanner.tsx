@@ -66,7 +66,7 @@ export default function HeroBanner() {
 
             <div className="relative w-full h-full">
               <Image 
-                src="/next.svg" // Chỗ này bạn nhớ thay ảnh mẫu tách nền nhé
+                src="/assets/images/Rectangle 2.png" // Chỗ này bạn nhớ thay ảnh mẫu tách nền nhé
                 alt="Models wearing stylish clothes"
                 fill
                 className="object-cover md:object-contain object-bottom dark:invert"
